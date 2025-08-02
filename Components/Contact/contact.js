@@ -3,15 +3,46 @@
 export default function Contact() {
   return (
     <section className="contact">
-      <h2 className="contact-title">Get In Touch</h2>
-      <div className="contact-description">
-        <p>
-          I'm currently looking for exciting opportunities to work with innovative teams and challenging projects. 
-          Whether you have a project in mind, want to collaborate, or just want to say hello, I'd love to hear from you!
-        </p>
-      </div>
-      <div className="contact-email">
-        <a href="mailto:ahmed.memon@example.com">ahmed.memon@example.com</a>
+      <div className="contact-container">
+        <div className="contact-cards">
+          <div className="contact-card">
+            <div className="card-icon email-icon">📧</div>
+            <h3 className="card-title">Email</h3>
+            <p className="card-value">dewminkasmitha30@gmail.com</p>
+          </div>
+          
+          <div className="contact-card">
+            <div className="card-icon phone-icon">📞</div>
+            <h3 className="card-title">Phone</h3>
+            <p className="card-value">+94 76 901 4603</p>
+          </div>
+          
+          <div className="contact-card">
+            <div className="card-icon location-icon">📍</div>
+            <h3 className="card-title">Location</h3>
+            <p className="card-value">Moratuwa, Sri Lanka</p>
+          </div>
+        </div>
+        
+        <div className="social-section">
+          <h3 className="social-title">
+            Connect with me on <span className="highlight">Social Media</span>
+          </h3>
+          <div className="social-icons">
+            <a href="#" className="social-icon linkedin">
+              <span>in</span>
+            </a>
+            <a href="#" className="social-icon github">
+              <span>🐙</span>
+            </a>
+            <a href="#" className="social-icon whatsapp">
+              <span>💬</span>
+            </a>
+            <a href="#" className="social-icon instagram">
+              <span>📷</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

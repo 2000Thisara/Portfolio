@@ -82,9 +82,6 @@ export default function Skills() {
             </div>
           ))}
         </div>
-        <div className="skills-text">
-          <p>I enjoy building innovative solutions and turning ideas into reality (like a modern-day Bob the Builder :p)</p>
-        </div>
       </div>
     </section>
   );

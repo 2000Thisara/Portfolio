@@ -2,6 +2,8 @@
 
 import Header from '../Components/Header/Header';
 import Hero from '../Components/Hero/Hero';
+import Education from '../Components/Education/Education';
+import Certifications from '../Components/Certifications/Certifications';
 import Skills from '../Components/Skills/Skills';
 import Projects from '../Components/Projects/projects';
 import Contact from '../Components/Contact/Contact';
@@ -15,6 +17,8 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Education />
+        <Certifications />
         <Skills />
         <Projects />
         <Contact />

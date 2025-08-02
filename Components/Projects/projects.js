@@ -2,11 +2,11 @@
 import Project from './Project.jsx';
 
 export default function Projects() {
-  console.log('Projects component rendering with 8 projects');
+  console.log('Projects component rendering with projects');
   
   return (
     <section className="projects">
-      <h2 style={{color: 'white', textAlign: 'center', marginBottom: '2rem'}}>Projects Section</h2>
+      <h2 className="projects-title">Projects</h2>
       
       <Project 
         subtitle="Spotify Data Visualizer"
