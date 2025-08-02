@@ -13,7 +13,7 @@ export default function Header() {
             <div className="logo-subtitle">Clean and Minimal</div>
           </div>
         </div>
-        <div className="personal-name">Ahmed Memon :)</div>
+        <div className="personal-name">Thisara Senadeera</div>
       </div>
       <nav className="nav">
         <Link href="#home" className="nav-link">Home</Link>

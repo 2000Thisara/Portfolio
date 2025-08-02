@@ -26,12 +26,11 @@ export default function BackgroundAnimation() {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        this.opacity = Math.random() * 0.5 + 0.2;
-        this.twinkle = Math.random() * 0.02;
-        this.twinkleSpeed = Math.random() * 0.02 + 0.01;
+        this.size = Math.random() * 1.5 + 0.3; // Smaller particles
+        this.speedX = (Math.random() - 0.5) * 0.2; // Slower movement
+        this.speedY = (Math.random() - 0.5) * 0.2; // Slower movement
+        this.opacity = Math.random() * 0.3 + 0.1; // Lower opacity
+        this.twinkleSpeed = Math.random() * 0.01 + 0.005; // Slower twinkling
       }
       
       update() {
@@ -39,7 +38,7 @@ export default function BackgroundAnimation() {
         this.y += this.speedY;
         this.opacity += this.twinkleSpeed;
         
-        if (this.opacity > 0.7 || this.opacity < 0.2) {
+        if (this.opacity > 0.4 || this.opacity < 0.1) {
           this.twinkleSpeed = -this.twinkleSpeed;
         }
         
@@ -55,11 +54,11 @@ export default function BackgroundAnimation() {
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
         
-        // Add glow effect
-        ctx.shadowColor = '#9333ea';
-        ctx.shadowBlur = 10;
+        // Reduced glow effect
+        ctx.shadowColor = 'rgba(147, 51, 234, 0.3)';
+        ctx.shadowBlur = 5;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.size * 1.5, 0, Math.PI * 2);
         ctx.fill();
         ctx.restore();
       }
@@ -74,15 +73,27 @@ export default function BackgroundAnimation() {
       reset() {
         this.x = Math.random() * canvas.width;
         this.y = 0;
-        this.speedX = (Math.random() - 0.5) * 8 + 4;
-        this.speedY = Math.random() * 3 + 2;
-        this.size = Math.random() * 3 + 1;
-        this.opacity = 1;
+        this.speedX = (Math.random() - 0.5) * 4 + 2; // Slower speed
+        this.speedY = Math.random() * 2 + 1; // Slower speed
+        this.size = Math.random() * 2 + 0.5; // Smaller size
+        this.opacity = 0.6; // Lower opacity
         this.trail = [];
-        this.maxTrailLength = 20;
+        this.maxTrailLength = 15; // Shorter trail
+        this.active = false;
+        this.delay = Math.random() * 10000 + 5000; // Random delay between 5-15 seconds
+        this.lastReset = Date.now();
       }
       
       update() {
+        const now = Date.now();
+        
+        // Only activate after delay
+        if (!this.active && now - this.lastReset > this.delay) {
+          this.active = true;
+        }
+        
+        if (!this.active) return;
+        
         this.x += this.speedX;
         this.y += this.speedY;
         
@@ -96,7 +107,7 @@ export default function BackgroundAnimation() {
         
         // Fade out trail
         this.trail.forEach((point, index) => {
-          point.opacity = (index / this.trail.length) * this.opacity;
+          point.opacity = (index / this.trail.length) * this.opacity * 0.5; // Reduced trail opacity
         });
         
         // Check if shooting star is off screen
@@ -106,12 +117,14 @@ export default function BackgroundAnimation() {
       }
       
       draw() {
-        // Draw trail
+        if (!this.active) return;
+        
+        // Draw trail with reduced opacity
         this.trail.forEach((point, index) => {
           ctx.save();
           ctx.globalAlpha = point.opacity;
           ctx.strokeStyle = '#ffffff';
-          ctx.lineWidth = this.size * (index / this.trail.length);
+          ctx.lineWidth = this.size * (index / this.trail.length) * 0.5; // Thinner trail
           ctx.lineCap = 'round';
           
           if (index > 0) {
@@ -121,19 +134,19 @@ export default function BackgroundAnimation() {
             ctx.stroke();
           }
           
-          // Add glow effect
-          ctx.shadowColor = '#9333ea';
-          ctx.shadowBlur = 15;
+          // Reduced glow effect
+          ctx.shadowColor = 'rgba(147, 51, 234, 0.2)';
+          ctx.shadowBlur = 8;
           ctx.stroke();
           ctx.restore();
         });
         
-        // Draw shooting star head
+        // Draw shooting star head with reduced glow
         ctx.save();
         ctx.globalAlpha = this.opacity;
         ctx.fillStyle = '#ffffff';
-        ctx.shadowColor = '#9333ea';
-        ctx.shadowBlur = 20;
+        ctx.shadowColor = 'rgba(147, 51, 234, 0.3)';
+        ctx.shadowBlur = 10;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -141,13 +154,13 @@ export default function BackgroundAnimation() {
       }
     }
     
-    // Initialize particles
-    for (let i = 0; i < 100; i++) {
+    // Initialize fewer particles
+    for (let i = 0; i < 50; i++) { // Reduced from 100 to 50
       particles.push(new Particle());
     }
     
-    // Initialize shooting stars
-    for (let i = 0; i < 3; i++) {
+    // Initialize fewer shooting stars
+    for (let i = 0; i < 2; i++) { // Reduced from 3 to 2
       shootingStars.push(new ShootingStar());
     }
     

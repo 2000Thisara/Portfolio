@@ -30,14 +30,6 @@ export default function Footer() {
     }
   ];
 
-  const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" }
-  ];
-
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -47,7 +39,7 @@ export default function Footer() {
             <div className="footer-logo">
               <div className="logo-icon">AM</div>
               <div className="logo-text">
-                <h3>Ahmed Memon</h3>
+                <h3>Thisara Senadeera</h3>
                 <p>Full-Stack Developer & UI/UX Designer</p>
               </div>
             </div>
@@ -56,18 +48,6 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="footer-section">
-            <h4>Quick Links</h4>
-            <ul className="footer-links">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a href={link.href} className="footer-link">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           <div className="footer-section">
             <h4>Connect</h4>
@@ -86,21 +66,8 @@ export default function Footer() {
               ))}
             </div>
             <div className="contact-info">
-              <p>📧 ahmed.memon@example.com</p>
-              <p>📱 +1 (555) 123-4567</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Bottom */}
-        <div className="footer-bottom">
-          <div className="footer-divider"></div>
-          <div className="footer-bottom-content">
-            <p>&copy; {currentYear} Ahmed Memon. All rights reserved.</p>
-            <div className="footer-bottom-links">
-              <a href="#privacy" className="footer-bottom-link">Privacy Policy</a>
-              <span className="separator">•</span>
-              <a href="#terms" className="footer-bottom-link">Terms of Service</a>
+              <p>📧 thisarasenadeera2000@gmail.com</p>
+              <p>📱 +94 779642375</p>
             </div>
           </div>
         </div>

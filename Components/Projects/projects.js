@@ -9,56 +9,48 @@ export default function Projects() {
       <h2 style={{color: 'white', textAlign: 'center', marginBottom: '2rem'}}>Projects Section</h2>
       
       <Project 
-        title="Featured Project"
         subtitle="Spotify Data Visualizer"
         description="A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
         isReversed={false}
       />
       
       <Project 
-        title="Featured Project"
         subtitle="E-Commerce Platform"
         description="A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart functionality, and payment integration with Stripe."
         isReversed={true}
       />
       
       <Project 
-        title="Featured Project"
         subtitle="Task Management App"
         description="A comprehensive task management application with real-time collaboration, drag-and-drop functionality, progress tracking, and team communication features."
         isReversed={false}
       />
 
       <Project 
-        title="Featured Project"
         subtitle="Portfolio Website"
         description="A modern, responsive portfolio website built with Next.js and React. Features dark theme, glassmorphism effects, and smooth animations. Includes sections for projects, skills, and contact information."
         isReversed={true}
       />
 
       <Project 
-        title="Featured Project"
         subtitle="Weather Dashboard"
         description="A real-time weather dashboard with interactive maps, 7-day forecasts, and location-based weather alerts. Built with React, OpenWeather API, and Chart.js for data visualization."
         isReversed={false}
       />
 
       <Project 
-        title="Featured Project"
         subtitle="Social Media Analytics"
         description="A comprehensive analytics platform for social media management. Tracks engagement metrics, audience growth, and content performance across multiple platforms with detailed reporting and insights."
         isReversed={true}
       />
 
       <Project 
-        title="Featured Project"
         subtitle="Recipe Finder App"
         description="A recipe discovery app with AI-powered recommendations, dietary filters, and meal planning features. Users can search by ingredients, save favorites, and create shopping lists."
         isReversed={false}
       />
 
       <Project 
-        title="Featured Project"
         subtitle="Fitness Tracker"
         description="A mobile-first fitness tracking application with workout logging, progress visualization, and social features. Includes personalized workout plans and nutrition tracking."
         isReversed={true}

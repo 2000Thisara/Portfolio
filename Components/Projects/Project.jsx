@@ -6,7 +6,7 @@ export default function Project({ title, subtitle, description, isReversed }) {
       <div className="project-content">
         <div className="project-text">
           <div className="project-header">
-            <span className="project-label">{title}</span>
+            {title && <span className="project-label">{title}</span>}
             <h2 className="project-subtitle">{subtitle}</h2>
           </div>
           <p className="project-description">{description}</p>
