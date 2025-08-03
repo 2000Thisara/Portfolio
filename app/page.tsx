@@ -16,12 +16,27 @@ export default function Home() {
       <BackgroundAnimation />
       <Header />
       <main>
-        <Hero />
-        <Education />
-        <Certifications />
-        <Skills />
-        <Projects />
-        <Contact />
+        <section id="home">
+          <Hero />
+        </section>
+        <section id="about">
+          {/* About section content would go here */}
+        </section>
+        <section id="education">
+          <Education />
+        </section>
+        <section id="certifications">
+          <Certifications />
+        </section>
+        <section id="skills">
+          <Skills />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
       <Footer />
     </div>

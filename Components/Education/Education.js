@@ -10,40 +10,32 @@ export default function Education() {
       description: "Pursuing a comprehensive degree in Information Technology with focus on software development, data structures, and modern web technologies.",
       location: "Moratuwa, Sri Lanka",
       icon: "🎓",
-      achievements: ["First Year", "Core IT Foundation"],
-      position: "right"
-    },
-    {
-      id: 2,
-      title: "Calcey Springboard",
-      degree: "Graduated from the one year degree program",
-      period: "2023 - 2024",
-      description: "Completed an intensive one-year program focused on practical software development skills and industry best practices.",
-      location: "Colombo, Sri Lanka",
-      icon: "🚀",
-      achievements: ["Full Stack Development", "Industry Ready"],
+      iconImage: "https://seekicon.com/free-icon-download/book_4.png",
+      achievements: ["Third Year", "Core IT Foundation"],
       position: "left"
     },
     {
-      id: 3,
-      title: "Visakha Vidyalaya",
+      id: 2,
+      title: "Poramadulla Central Collage",
       degree: "GCE Advanced Level (A/L)",
-      period: "2019 - 2021",
-      description: "Completed Advanced Level examination with focus on Mathematics, Physics, and Information Technology as main subjects.",
-      location: "Colombo, Sri Lanka",
+      period: "2021",
+      description: "Completed Advanced Level examination with focus on Chemistry, Biology and Physics as main subjects.",
+      location: "Nuwara Eliya, Sri Lanka",
       icon: "🏫",
-      achievements: ["A/L Completed", "Science Stream"],
+      iconImage: "https://seekicon.com/free-icon-download/book_4.png",
+      achievements: ["A/L Completed", "Science Stream", " A B C"],
       position: "right"
     },
     {
-      id: 4,
-      title: "St Mary's College",
+      id: 3,
+      title: "Poramadulla Central Collage",
       degree: "GCE Ordinary Level (O/L)",
-      period: "2018",
-      description: "GCE Ordinary Level examination completed with Information and Communication technology, Tamil and English literature as basket subjects. Developed the basement for advanced studies in technology.",
-      location: "Kegalle, Sri Lanka",
+      period: "2016",
+      description: "GCE Ordinary Level examination completed with Information and Communication technology and English literature as basket subjects.",
+      location: "Nuwara Eliya, Sri Lanka",
       icon: "📚",
-      achievements: ["A7 B2", "O/L Completed"],
+      iconImage: "https://seekicon.com/free-icon-download/book_4.png",
+      achievements: ["O/L Completed", "A7 B2"],
       position: "left"
     }
   ];
@@ -57,22 +49,26 @@ export default function Education() {
           {educationData.map((item, index) => (
             <div key={item.id} className={`timeline-item ${item.position}`}>
               <div className="timeline-node">
-                <div className="node-icon">{item.icon}</div>
+                <div className="node-icon">
+                  <img src={item.iconImage} alt="Education" />
+                </div>
               </div>
               <div className="timeline-content">
                 <div className="education-card">
                   <div className="card-header">
                     <div className="date-tag">{item.period}</div>
-                    <div className="institution-icon">{item.icon}</div>
+                    <div className="institution-icon">
+ 
+                    </div>
                   </div>
                   <h3 className="education-title-card">{item.title}</h3>
                   <div className="institution-info">
                     <span className="institution-name">
-                      <i className="icon-building">🏢</i>
+                      <img src="https://cdn-icons-png.flaticon.com/512/2436/2436636.png" alt="Building" className="icon-building" />
                       {item.degree}
                     </span>
                     <span className="location">
-                      <i className="icon-location">📍</i>
+                      <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" className="icon-location" />
                       {item.location}
                     </span>
                   </div>
@@ -80,7 +76,7 @@ export default function Education() {
                   <div className="achievements">
                     {item.achievements.map((achievement, idx) => (
                       <span key={idx} className="achievement-tag">
-                        <i className="icon-check">✓</i>
+                        <img src="https://static.vecteezy.com/system/resources/previews/012/909/445/large_2x/green-tick-icon-3d-render-free-png.png" alt="Check" className="icon-check" />
                         {achievement}
                       </span>
                     ))}
