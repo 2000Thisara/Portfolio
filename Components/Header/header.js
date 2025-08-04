@@ -61,7 +61,7 @@ export default function Header() {
       </div>
       <nav className="nav">
         <button onClick={() => scrollToSection('home')} className="nav-link">Home</button>
-        <button onClick={() => scrollToSection('about')} className="nav-link">About</button>
+        <button onClick={() => scrollToSection('home')} className="nav-link">About</button>
         <button onClick={() => scrollToSection('education')} className="nav-link">Education</button>
         <button onClick={() => scrollToSection('certifications')} className="nav-link">Certifications</button>
         <button onClick={() => scrollToSection('skills')} className="nav-link">Skills</button>

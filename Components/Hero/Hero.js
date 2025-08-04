@@ -54,38 +54,54 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <div className="hero-content">
-        <div className="hero-left">
-          <div className="profile-image">
-            <div className="image-placeholder"><img src="https://media.licdn.com/dms/image/v2/D4E03AQEkaJXphghWgg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699168959569?e=1756944000&v=beta&t=0ibECo1M0xdEQ-jA9fL8Rwu7134miNxc_ZHcgJRMMCs" alt="Profile" /></div>
-          </div>
-        </div>
-        <div className="hero-right">
-          <div className="headline-section">
-            <h1 className="main-headline">Hi, I'm Thisara</h1>
-            <div className="headline-info">
-              <div className="typewriter-container">
-                <span className="typewriter-text">{text}</span>
-                <span className="cursor">|</span>
-              </div>
+              <div className="hero-content">
+          <div className="hero-left">
+            <div className="profile-image">
+              <div className="image-placeholder"><img src="https://media.licdn.com/dms/image/v2/D4E03AQEkaJXphghWgg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699168959569?e=1756944000&v=beta&t=0ibECo1M0xdEQ-jA9fL8Rwu7134miNxc_ZHcgJRMMCs" alt="Profile" /></div>
             </div>
           </div>
-          
-          <div className="who-am-i">
-            <h2 className="who-am-i-title">WHO AM I?</h2>
-            <p className="who-am-i-subtitle">Currently crafting amazing web experiences :D</p>
-          </div>
-          
-          <div className="description">
-            <p>
-              I'm a passionate full-stack developer with 5+ years of experience building modern web applications. 
-              I specialize in React, Node.js, and cloud technologies. When I'm not coding, you'll find me exploring 
-              new design trends or contributing to open-source projects. I believe in creating user-centered solutions 
-              that solve real-world problems.
-            </p>
+          <div className="hero-right">
+            <div className="headline-section">
+              <h1 className="main-headline">Hi, I am Thisara</h1>
+              <div className="headline-info">
+                <div className="typewriter-container">
+                  <span className="typewriter-text">{text}</span>
+                  <span className="cursor">|</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="who-am-i">
+              <h2 className="who-am-i-title">WHO AM I?</h2>
+              <div className="description">
+              <p>
+                A third-year undergraduate at the Faculty of Information Technology, University of Moratuwa, with a strong passion for full-stack development, networking, and cybersecurity. Enthusiastic about working in collaborative team environments and always motivated to take on new challenges.
+              </p>
+            </div>
+            </div>
+
+            
+            <div className="hero-buttons">
+              <button className="hero-btn primary-btn" onClick={() => window.open('/resume.pdf', '_blank')}>
+                <span>View My Resume</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14,2 14,8 20,8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10,9 9,9 8,9"></polyline>
+                </svg>
+              </button>
+              <button className="hero-btn secondary-btn" onClick={() => document.getElementById('get-in-touch').scrollIntoView({ behavior: 'smooth' })}>
+                <span>Get In Touch</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
     </section>
   );
 } 

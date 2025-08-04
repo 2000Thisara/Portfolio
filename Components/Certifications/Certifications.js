@@ -64,7 +64,7 @@ export default function Certifications() {
               </div>
               <h3 className="cert-title">{cert.title}</h3>
               <p className="cert-issuer">{cert.issuingBody}</p>
-              <a href={cert.verifyUrl} className="verify-button">
+              <a href={cert.verifyUrl} className="verify-button" target="blank">
                 Verify Credential
               </a>
             </div>

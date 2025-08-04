@@ -6,6 +6,7 @@ import Education from '../Components/Education/Education';
 import Certifications from '../Components/Certifications/Certifications';
 import Skills from '../Components/Skills/Skills';
 import Projects from '../Components/Projects/projects';
+import GetInTouch from '../Components/Contact/GetInTouch';
 import Contact from '../Components/Contact/Contact';
 import Footer from '../Components/Footer/footer';
 import BackgroundAnimation from '../Components/BackgroundAnimation/BackgroundAnimation';
@@ -33,6 +34,9 @@ export default function Home() {
         </section>
         <section id="projects">
           <Projects />
+        </section>
+        <section id="get-in-touch">
+          <GetInTouch />
         </section>
         <section id="contact">
           <Contact />
