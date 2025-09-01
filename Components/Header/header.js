@@ -51,13 +51,9 @@ export default function Header() {
     <header className="header">
       <div className="header-left">
         <div className="logo">
-          <div className="logo-placeholder">AM</div>
-          <div className="logo-text">
-            <div>Portfolio</div>
-            <div className="logo-subtitle">Clean and Minimal</div>
-          </div>
+          <div className="logo-placeholder">TS</div>
+          <div className="personal-name">Thisara Senadeera</div>
         </div>
-        <div className="personal-name">Thisara Senadeera</div>
       </div>
       <nav className="nav">
         <button onClick={() => scrollToSection('home')} className="nav-link">Home</button>
