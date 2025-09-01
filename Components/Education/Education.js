@@ -1,4 +1,5 @@
 "use client"
+import { motion } from 'framer-motion'
 import './styles/education.css'
 
 const educationData = [
@@ -38,14 +39,68 @@ const educationData = [
 ]
 
 export default function Education() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.3
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { x: -100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  }
+
+  const rightItemVariants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  }
+
   return (
-    <section className="education">
+    <motion.section 
+      className="education"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
       <div className="education-container">
-        <h2 className="education-title">Education</h2>
+        <motion.h2 
+          className="education-title"
+          variants={itemVariants}
+        >
+          Education
+        </motion.h2>
         <div className="timeline-container">
           <div className="timeline-line"></div>
           {educationData.map((item) => (
-            <div key={item.id} className={`timeline-item ${item.position}`}>
+            <motion.div 
+              key={item.id} 
+              className={`timeline-item ${item.position}`}
+              variants={item.position === 'left' ? itemVariants : rightItemVariants}
+              whileHover={{ 
+                scale: 1.02,
+                transition: { duration: 0.2 }
+              }}
+            >
               <div className="timeline-node">
                 <div className="node-icon">
                   <img src={item.iconImage} alt="Education" />
@@ -90,10 +145,10 @@ export default function Education() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 } 

@@ -1,4 +1,5 @@
 "use client"
+import { motion } from 'framer-motion'
 import './styles/skills.css'
 
 const skills = [
@@ -94,13 +95,59 @@ export default function Skills() {
     e.target.nextSibling.style.display = 'block'
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.1
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  }
+
   return (
-    <section className="skills">
+    <motion.section 
+      className="skills"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
       <div className="skills-container">
-        <h2 className="skills-title">Skills & Technologies</h2>
-        <div className="skills-grid">
+        <motion.h2 
+          className="skills-title"
+          variants={itemVariants}
+        >
+          Skills & Technologies
+        </motion.h2>
+        <motion.div 
+          className="skills-grid"
+          variants={containerVariants}
+        >
           {skills.map((skill, index) => (
-            <div key={index} className="skill-card">
+            <motion.div 
+              key={index} 
+              className="skill-card"
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.05, 
+                y: -5,
+                transition: { duration: 0.2 }
+              }}
+            >
               <div className="skill-icon">
                 <img 
                   src={skill.image} 
@@ -113,10 +160,10 @@ export default function Skills() {
                 </span>
               </div>
               <h3 className="skill-name">{skill.name}</h3>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 } 

@@ -1,4 +1,5 @@
 "use client"
+import { motion } from 'framer-motion'
 import ProjectCard from './ProjectCard.jsx'
 import './styles/projects.css'
 
@@ -33,25 +34,63 @@ const projectsData = [
 ]
 
 export default function Projects() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  }
+
   return (
-    <section className="projects">
+    <motion.section 
+      className="projects"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
       <div className="projects-container">
-        <h2 className="projects-title">Projects</h2>
-        <div className="projects-grid">
+        <motion.h2 
+          className="projects-title"
+          variants={itemVariants}
+        >
+          Projects
+        </motion.h2>
+        <motion.div 
+          className="projects-grid"
+          variants={containerVariants}
+        >
           {projectsData.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              fullDescription={project.fullDescription}
-              image={project.image}
-              technologies={project.technologies}
-              githubUrl={project.githubUrl}
-              linkedinUrl={project.linkedinUrl}
-            />
+            <motion.div key={index} variants={itemVariants}>
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                fullDescription={project.fullDescription}
+                image={project.image}
+                technologies={project.technologies}
+                githubUrl={project.githubUrl}
+                linkedinUrl={project.linkedinUrl}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

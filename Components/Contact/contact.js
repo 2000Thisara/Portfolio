@@ -1,4 +1,5 @@
 "use client"
+import { motion } from 'framer-motion'
 import './styles/contact.css'
 
 const contactData = [
@@ -54,12 +55,65 @@ export default function Contact() {
     e.target.style.display = 'none'
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const cardVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  }
+
+  const socialVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
+  }
+
   return (
-    <section className="contact">
+    <motion.section 
+      className="contact"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
       <div className="contact-container">
-        <div className="contact-cards">
+        <motion.div 
+          className="contact-cards"
+          variants={containerVariants}
+        >
           {contactData.map((contact) => (
-            <div key={contact.id} className="contact-card">
+            <motion.div 
+              key={contact.id} 
+              className="contact-card"
+              variants={cardVariants}
+              whileHover={{ 
+                scale: 1.05,
+                y: -5,
+                transition: { duration: 0.2 }
+              }}
+            >
               <div className={`card-icon ${contact.id}-icon`}>
                 <img 
                   src={contact.icon} 
@@ -69,34 +123,51 @@ export default function Contact() {
               </div>
               <h3 className="card-title">{contact.title}</h3>
               <p className="card-value">{contact.value}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         
-        <div className="social-section">
-          <h3 className="social-title">
+        <motion.div 
+          className="social-section"
+          variants={containerVariants}
+        >
+          <motion.h3 
+            className="social-title"
+            variants={cardVariants}
+          >
             Connect with me on <span className="highlight">Social Media</span>
-          </h3>
-          <div className="social-icons">
-            {socialLinks.map((social) => (
-              <a 
+          </motion.h3>
+          <motion.div 
+            className="social-icons"
+            variants={containerVariants}
+          >
+            {socialLinks.map((social, index) => (
+              <motion.a 
                 key={social.name}
                 href={social.url} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className={`social-icon ${social.className}`}
                 aria-label={`Connect on ${social.name}`}
+                variants={socialVariants}
+                custom={index}
+                whileHover={{ 
+                  scale: 1.2,
+                  rotate: [0, -10, 10, -10, 0],
+                  transition: { duration: 0.4 }
+                }}
+                whileTap={{ scale: 0.9 }}
               >
                 <img 
                   src={social.icon} 
                   alt={social.name} 
                   onError={handleImageError}
                 />
-              </a>
+              </motion.a>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

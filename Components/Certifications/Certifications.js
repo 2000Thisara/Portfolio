@@ -1,4 +1,5 @@
 "use client"
+import { motion } from 'framer-motion'
 import './styles/certifications.css'
 
 const certifications = [
@@ -42,15 +43,70 @@ export default function Certifications() {
     e.target.nextSibling.style.display = 'block'
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  }
+
   return (
-    <section className="certifications">
+    <motion.section 
+      className="certifications"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
       <div className="certifications-container">
-        <h2 className="certifications-title">Certifications</h2>
-        <div className="certifications-grid">
+        <motion.h2 
+          className="certifications-title"
+          variants={itemVariants}
+        >
+          Certifications
+        </motion.h2>
+        <motion.div 
+          className="certifications-grid"
+          variants={containerVariants}
+        >
           {certifications.map((cert) => (
-            <div key={cert.id} className="certification-card">
-              <div className="cert-logo">
-                <div className={`logo-container ${cert.logoStyle}`}>
+            <motion.div 
+              key={cert.id} 
+              className="certification-card"
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.05,
+                y: -10,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <motion.div 
+                className="cert-logo"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.4 }}
+              >
+                <motion.div 
+                  className={`logo-container ${cert.logoStyle}`}
+                  whileHover={{ rotate: [0, -10, 10, -10, 0], transition: { duration: 0.5 } }}
+                >
                   <img 
                     src={cert.logoImage} 
                     alt={cert.issuingBody}
@@ -60,22 +116,38 @@ export default function Certifications() {
                   <span className="logo-icon" style={{ display: 'none' }}>
                     🎓
                   </span>
-                </div>
-              </div>
-              <h3 className="cert-title">{cert.title}</h3>
-              <p className="cert-issuer">{cert.issuingBody}</p>
-              <a 
+                </motion.div>
+              </motion.div>
+              <motion.h3 
+                className="cert-title"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.4 }}
+              >
+                {cert.title}
+              </motion.h3>
+              <motion.p 
+                className="cert-issuer"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8, duration: 0.4 }}
+              >
+                {cert.issuingBody}
+              </motion.p>
+              <motion.a 
                 href={cert.verifyUrl} 
                 className="verify-button" 
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Verify Credential
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 } 
