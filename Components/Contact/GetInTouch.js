@@ -1,39 +1,37 @@
-"use client";
-import { useState } from 'react';
+"use client"
+import { useState } from 'react'
+
+const initialFormData = {
+  name: '',
+  email: '',
+  message: ''
+}
 
 export default function GetInTouch() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState(initialFormData)
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    });
-  };
+    })
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     
     // Create mailto link with form data
-    const subject = `Contact from ${formData.name}`;
-    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+    const subject = `Contact from ${formData.name}`
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     
-    const mailtoLink = `mailto:thisarasenadeera2000@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:thisarasenadeera2000@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     
     // Open default email client
-    window.open(mailtoLink);
+    window.open(mailtoLink)
     
     // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-  };
+    setFormData(initialFormData)
+  }
 
   return (
     <section className="get-in-touch">
@@ -64,7 +62,7 @@ export default function GetInTouch() {
             value={formData.message}
             onChange={handleChange}
             className="form-textarea"
-            rows="5"
+            rows={5}
             required
           />
           <button type="submit" className="send-message-btn">
@@ -73,5 +71,5 @@ export default function GetInTouch() {
         </form>
       </div>
     </section>
-  );
+  )
 } 

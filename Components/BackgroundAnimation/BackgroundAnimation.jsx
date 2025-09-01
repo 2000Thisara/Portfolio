@@ -1,53 +1,53 @@
-"use client";
-import { useEffect, useRef } from 'react';
+"use client"
+import { useEffect, useRef } from 'react'
 
 export default function BackgroundAnimation() {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef(null)
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const canvas = canvasRef.current
+    const ctx = canvas.getContext('2d')
     
     // Set canvas size
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+    }
     
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas()
+    window.addEventListener('resize', resizeCanvas)
 
     // Particle system
-    const particles = [];
-    const shootingStars = [];
+    const particles = []
+    const shootingStars = []
     
     // Particle class
     class Particle {
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 1.5 + 0.3; // Smaller particles
-        this.speedX = (Math.random() - 0.5) * 0.2; // Slower movement
-        this.speedY = (Math.random() - 0.5) * 0.2; // Slower movement
-        this.opacity = Math.random() * 0.3 + 0.1; // Lower opacity
-        this.twinkleSpeed = Math.random() * 0.01 + 0.005; // Slower twinkling
+        this.x = Math.random() * canvas.width
+        this.y = Math.random() * canvas.height
+        this.size = Math.random() * 1.5 + 0.3 // Smaller particles
+        this.speedX = (Math.random() - 0.5) * 0.2 // Slower movement
+        this.speedY = (Math.random() - 0.5) * 0.2 // Slower movement
+        this.opacity = Math.random() * 0.3 + 0.1 // Lower opacity
+        this.twinkleSpeed = Math.random() * 0.01 + 0.005 // Slower twinkling
       }
       
       update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.opacity += this.twinkleSpeed;
+        this.x += this.speedX
+        this.y += this.speedY
+        this.opacity += this.twinkleSpeed
         
         if (this.opacity > 0.4 || this.opacity < 0.1) {
-          this.twinkleSpeed = -this.twinkleSpeed;
+          this.twinkleSpeed = -this.twinkleSpeed
         }
         
-        if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
-        if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX
+        if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY
       }
       
       draw() {
-        ctx.save();
+        ctx.save()
         ctx.globalAlpha = this.opacity;
         ctx.fillStyle = '#ffffff';
         ctx.beginPath();
@@ -187,9 +187,9 @@ export default function BackgroundAnimation() {
     
     // Cleanup
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
-    };
-  }, []);
+      window.removeEventListener('resize', resizeCanvas)
+    }
+  }, [])
 
   return (
     <canvas
@@ -204,5 +204,5 @@ export default function BackgroundAnimation() {
         pointerEvents: 'none'
       }}
     />
-  );
+  )
 } 

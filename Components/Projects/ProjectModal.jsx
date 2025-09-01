@@ -1,5 +1,5 @@
-"use client";
-import { useEffect } from 'react';
+"use client"
+import { useEffect } from 'react'
 
 export default function ProjectModal({ 
   title, 
@@ -11,29 +11,33 @@ export default function ProjectModal({
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
-        onClose();
+        onClose()
       }
-    };
+    }
 
-    document.addEventListener('keydown', handleEscape);
-    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleEscape)
+    document.body.style.overflow = 'hidden'
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
-    };
-  }, [onClose]);
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'unset'
+    }
+  }, [onClose])
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      onClose()
     }
-  };
+  }
 
   return (
     <div className="project-modal-overlay" onClick={handleBackdropClick}>
       <div className="project-modal">
-        <button className="modal-close-btn" onClick={onClose}>
+        <button 
+          className="modal-close-btn" 
+          onClick={onClose}
+          aria-label="Close modal"
+        >
           ×
         </button>
         
@@ -61,5 +65,5 @@ export default function ProjectModal({
         </div>
       </div>
     </div>
-  );
+  )
 } 
