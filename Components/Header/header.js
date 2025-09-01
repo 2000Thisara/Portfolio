@@ -1,9 +1,14 @@
 "use client";
 
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -45,6 +50,9 @@ export default function Header() {
 
       requestAnimationFrame(animation);
     }
+    
+    // Close mobile menu after navigation
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -55,7 +63,9 @@ export default function Header() {
           <div className="personal-name">Thisara Senadeera</div>
         </div>
       </div>
-      <nav className="nav">
+      
+      {/* Desktop Navigation */}
+      <nav className="nav desktop-nav">
         <button onClick={() => scrollToSection('home')} className="nav-link">Home</button>
         <button onClick={() => scrollToSection('home')} className="nav-link">About</button>
         <button onClick={() => scrollToSection('education')} className="nav-link">Education</button>
@@ -64,6 +74,31 @@ export default function Header() {
         <button onClick={() => scrollToSection('projects')} className="nav-link">Projects</button>
         <button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button>
       </nav>
+
+      {/* Mobile Hamburger Button */}
+      <button 
+        className={`mobile-menu-btn ${isMobileMenuOpen ? 'open' : ''}`}
+        onClick={toggleMobileMenu}
+        aria-label="Toggle mobile menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {/* Mobile Navigation */}
+      <nav className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}>
+        <button onClick={() => scrollToSection('home')} className="mobile-nav-link">Home</button>
+        <button onClick={() => scrollToSection('home')} className="mobile-nav-link">About</button>
+        <button onClick={() => scrollToSection('education')} className="mobile-nav-link">Education</button>
+        <button onClick={() => scrollToSection('certifications')} className="mobile-nav-link">Certifications</button>
+        <button onClick={() => scrollToSection('skills')} className="mobile-nav-link">Skills</button>
+        <button onClick={() => scrollToSection('projects')} className="mobile-nav-link">Projects</button>
+        <button onClick={() => scrollToSection('contact')} className="mobile-nav-link">Contact</button>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && <div className="mobile-menu-overlay" onClick={toggleMobileMenu}></div>}
     </header>
   );
 }
