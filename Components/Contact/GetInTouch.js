@@ -1,5 +1,6 @@
 "use client"
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import './styles/contact.css'
 
 const initialFormData = {
@@ -35,10 +36,31 @@ export default function GetInTouch() {
   }
 
   return (
-    <section className="get-in-touch">
+    <motion.section 
+      className="get-in-touch"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="get-in-touch-container">
-        <h2 className="get-in-touch-title">Get In Touch</h2>
-        <form onSubmit={handleSubmit} className="contact-form">
+        <motion.h2 
+          className="get-in-touch-title"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          Get In Touch
+        </motion.h2>
+        <motion.form 
+          onSubmit={handleSubmit} 
+          className="contact-form"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           <input
             type="text"
             name="name"
@@ -66,11 +88,16 @@ export default function GetInTouch() {
             rows={5}
             required
           />
-          <button type="submit" className="send-message-btn">
+          <motion.button 
+            type="submit" 
+            className="send-message-btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             Send Message
-          </button>
-        </form>
+          </motion.button>
+        </motion.form>
       </div>
-    </section>
+    </motion.section>
   )
 } 
