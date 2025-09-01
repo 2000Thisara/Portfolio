@@ -1320,18 +1320,33 @@ nav {
   }
   
   .hero {
-    padding: 2rem;
+    padding: 2rem 1rem;
   }
   
   .hero-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-left {
+    order: 1;
+  }
+
+  .hero-right {
+    order: 2;
+    gap: 1.5rem;
+  }
+
+  .headline-section {
+    margin-bottom: 1.5rem;
   }
   
   .image-placeholder {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     border-radius: 100%;
+    margin: 0 auto;
   }
   
   .image-placeholder img {
@@ -1343,7 +1358,44 @@ nav {
   }
   
   .main-headline {
-    font-size: 36px;
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .typewriter-container {
+    justify-content: center;
+  }
+
+  .typewriter-text {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  .cursor {
+    font-size: 28px;
+  }
+
+  .who-am-i-title {
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+
+  .description p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+    min-width: 140px;
   }
   
   .education {
@@ -1936,9 +1988,63 @@ nav {
       font-size: 32px;
     }
   
+  .hero {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .hero-content {
+    gap: 1.5rem;
+  }
+
+  .headline-section {
+    margin-bottom: 1rem;
+  }
+
+  .main-headline {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .typewriter-container {
+    justify-content: center;
+  }
+
+  .typewriter-text {
+    font-size: 22px;
+  }
+
+  .cursor {
+    font-size: 22px;
+  }
+
+  .who-am-i-title {
+    font-size: 20px;
+    margin-bottom: 0.75rem;
+  }
+
+  .description p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    align-items: center;
+  }
+
+  .hero-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+
   .image-placeholder {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 100%;
     box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
   }
