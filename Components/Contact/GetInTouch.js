@@ -1,5 +1,6 @@
 "use client"
 import { useState } from 'react'
+import './styles/contact.css'
 
 const initialFormData = {
   name: '',

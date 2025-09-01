@@ -1,4 +1,5 @@
 "use client"
+import './styles/contact.css'
 
 const contactData = [
   {

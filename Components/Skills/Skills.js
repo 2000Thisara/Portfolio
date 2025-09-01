@@ -1,4 +1,5 @@
 "use client"
+import './styles/skills.css'
 
 const skills = [
   {

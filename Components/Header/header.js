@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react'
+import './styles/header.css'
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)

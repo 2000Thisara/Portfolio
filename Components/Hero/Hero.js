@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react'
+import './styles/hero.css'
 
 export default function Hero() {
   const [text, setText] = useState('')

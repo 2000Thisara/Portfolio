@@ -1,5 +1,6 @@
 "use client"
 import ProjectCard from './ProjectCard.jsx'
+import './styles/projects.css'
 
 const projectsData = [
   {
@@ -34,20 +35,22 @@ const projectsData = [
 export default function Projects() {
   return (
     <section className="projects">
-      <h2 className="projects-title">Projects</h2>
-      <div className="projects-grid">
-        {projectsData.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            description={project.description}
-            fullDescription={project.fullDescription}
-            image={project.image}
-            technologies={project.technologies}
-            githubUrl={project.githubUrl}
-            linkedinUrl={project.linkedinUrl}
-          />
-        ))}
+      <div className="projects-container">
+        <h2 className="projects-title">Projects</h2>
+        <div className="projects-grid">
+          {projectsData.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              fullDescription={project.fullDescription}
+              image={project.image}
+              technologies={project.technologies}
+              githubUrl={project.githubUrl}
+              linkedinUrl={project.linkedinUrl}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )
