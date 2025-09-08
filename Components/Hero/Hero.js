@@ -83,7 +83,7 @@ export default function Hero() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <img 
-                src="https://media.licdn.com/dms/image/v2/D4E03AQEkaJXphghWgg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699168959569?e=1756944000&v=beta&t=0ibECo1M0xdEQ-jA9fL8Rwu7134miNxc_ZHcgJRMMCs" 
+                src="https://media.licdn.com/dms/image/v2/D4E03AQEkaJXphghWgg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1699168959569?e=1759968000&v=beta&t=GZYINPQzI7sxevf0ZcvSW172RtAAGlt7Sd9Na2djIgU" 
                 alt="Thisara Senadeera Profile" 
               />
             </motion.div>
