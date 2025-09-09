@@ -6,6 +6,7 @@ export default function ProjectCard({
   title, 
   description, 
   image,  
+  video,
   technologies, 
   fullDescription,
   githubUrl,
@@ -84,6 +85,7 @@ export default function ProjectCard({
           title={title}
           description={fullDescription}
           image={image}
+          video={video}
           technologies={technologies}
           onClose={closeModal}
         />

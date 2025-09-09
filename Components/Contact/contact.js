@@ -41,12 +41,6 @@ const socialLinks = [
     url: "https://wa.me/94779642375",
     icon: "https://static.vecteezy.com/system/resources/previews/018/930/564/original/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png",
     className: "whatsapp"
-  },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/thisara_senadeera",
-    icon: "https://cdn-icons-png.flaticon.com/512/733/733614.png", 
-    className: "instagram"
   }
 ]
 

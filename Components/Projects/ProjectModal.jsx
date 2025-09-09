@@ -5,6 +5,7 @@ export default function ProjectModal({
   title, 
   description, 
   image,  
+  video,
   technologies, 
   onClose 
 }) {
@@ -40,20 +41,28 @@ export default function ProjectModal({
         >
           ×
         </button>
-        
         <div className="modal-content">
-          <div className="modal-image">
-            <img src={image} alt={title} />
+          <div className="modal-media">
+            {video ? (
+              <iframe
+                width="100%"
+                height="315"
+                src={video}
+                title={title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <img src={image} alt={title} />
+            )}
           </div>
-          
           <div className="modal-header">
             <h2 className="modal-title">{title}</h2>
           </div>
-          
           <div className="modal-description">
             <p>{description}</p>
           </div>
-          
           <div className="modal-technologies">
             <h3>Technologies Used</h3>
             <div className="technology-tags">
