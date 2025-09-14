@@ -27,10 +27,10 @@ const projectsData = [
     title: "E-commerce Platform for Bathware (Bathlux)",
     description: "A web development project that build the frontend with HTML, CSS, JavaScript and PHP backend.",
     fullDescription: "A web development project that build with HTML, CSS, and JavaScript on the frontend and PHP with SQL on the backend, this e-commerce site allowed browsing, ordering, and inventory tracking of bathware products.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: "/bathluxImage.jpg",
+    video: "/bathluxe.mp4",
     technologies: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
-    githubUrl: "https://github.com/yourusername/bathlux",
-    linkedinUrl: "https://linkedin.com/in/yourusername"
+    linkedinUrl: "https://www.linkedin.com/in/thisara-senadeera-404b43299/details/projects/"
   }
 ]
 

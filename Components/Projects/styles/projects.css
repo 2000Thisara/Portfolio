@@ -166,6 +166,8 @@
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
+    min-width: 140px;
+    width: auto;
 }
 
 .more-info-btn:hover {
