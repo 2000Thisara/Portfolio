@@ -83,7 +83,7 @@ export default function Hero() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <img 
-                src="professional photo.png" 
+             src="/Professional photo.png" 
                 alt="Thisara Senadeera Profile" 
               />
             </motion.div>
