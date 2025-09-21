@@ -31,7 +31,26 @@ const projectsData = [
     video: "/bathluxe.mp4",
     technologies: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
     linkedinUrl: "https://www.linkedin.com/in/thisara-senadeera-404b43299/details/projects/"
-  }
+  },
+    {
+    title: "DNS Performance Analysis Using Wireshark",
+    description: "This project uses Wireshark to analyze DNS traffic and identify performance bottlenecks. By capturing and filtering queries and responses, it demonstrates practical skills in network analysis, troubleshooting, and data interpretation to improve system reliability and efficiency.",
+    fullDescription: "This project focused on a comprehensive network analysis of the DNS protocol to understand its operational behavior and identify potential performance issues. Using Wireshark, a powerful network protocol analyzer, I captured live DNS traffic in a real-world network environment. The methodology included applying specific display filters to isolate and examine key aspects of the traffic, such as the distribution of DNS query types (A and AAAA records) and measuring the time between a DNS query and its corresponding response.The analysis revealed that while average response times were fast, occasional spikes indicated that the local DNS server could be a minor bottleneck, particularly when browsing new websites. The findings demonstrate proficiency in network analysis, packet inspection, and data interpretation, and highlight a practical application of these skills to improve network performance. ",
+    image: "DNS Response Time.png",
+    technologies: ["Wireshark", "Network Analysis", "DNS"],
+    githubUrl: "https://github.com/2000Thisara/DNS-Performance-and-Analysis",
+    linkedinUrl: "https://www.linkedin.com/posts/thisara-senadeera-404b43299_networkanalysis-dns-wireshark-activity-7375476613775405056-cXfV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEg_7oQB2Ht_OOmM1qndDQsRNJ8I9Thcb0U"
+  },
+      {
+    title: "HTTP Packet Analysis and Security Audit",
+    description: "This project uses Wireshark to capture unencrypted HTTP traffic, showing how login data can be intercepted from a Python-based web app. It highlights the importance of HTTPS and secure configurations to prevent data exposure and enhance cybersecurity.",
+    fullDescription: "Captured and analyzed HTTP network traffic using Wireshark to demonstrate cybersecurity vulnerabilities, including the transmission of unencrypted data and information leakage. Set up a local Python server to simulate a web application and performed a security audit. The analysis confirmed that sensitive data is vulnerable to interception, reinforcing the importance of HTTPS encryption and secure server configurations.",
+    image: "http.jpg",
+    technologies: ["Wireshark", "Python", "HTTP"],
+    githubUrl: "https://github.com/2000Thisara/HTTP-Vulnerability-Analysis",
+    linkedinUrl: "https://www.linkedin.com/in/thisara-senadeera-404b43299/details/projects/"
+  },
+  
 ]
 
 export default function Projects() {
