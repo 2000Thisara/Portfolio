@@ -52,7 +52,7 @@ export default function Hero() {
   }, [text, isDeleting, textIndex, charIndex, texts])
 
   const handleResumeClick = () => {
-    window.open('/resume.pdf', '_blank')
+    window.open('/Thisara Senadeera CV.pdf', '_blank')
   }
 
   const handleContactClick = () => {

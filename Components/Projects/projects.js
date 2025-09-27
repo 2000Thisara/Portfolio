@@ -50,6 +50,15 @@ const projectsData = [
     githubUrl: "https://github.com/2000Thisara/HTTP-Vulnerability-Analysis",
     linkedinUrl: "https://www.linkedin.com/in/thisara-senadeera-404b43299/details/projects/"
   },
+   {
+    title: "Advanced Company Network Design",
+    description: "Engineered a secure, high-availability network using a Cisco ASA Firewall (DMZ, NAT) and redundancy protocols like HSRP and LACP. Implemented OSPF and SVI for Inter-VLAN Routing. Deployed Cisco WLC for segmented WIFI SSIDs and a full VoIP Telephony Service.",
+    fullDescription: "Designed and implemented an advanced, highly available enterprise network using a Hierarchical Design model. The project centered on securing the perimeter with a Cisco ASA Firewall, configuring Inside, Outside, and DMZ zones, NAT, and ACLs. Network resilience was ensured by deploying HSRP for gateway redundancy and LACP EtherChannel for link aggregation. Internal traffic management utilized OSPF dynamic routing and SVI for Inter-VLAN Routing, segmenting traffic into multiple VLANs (VoIP, WLAN, Data). Essential services included the deployment of a Cisco Wireless LAN Controller (WLC) managing segmented WIFI SSIDs and a full VoIP Telephony Service with Voice Gateways, demonstrating comprehensive skills in security, redundancy, and service delivery.",
+    image: "Network Diagram.png",
+    technologies: ["Cisco ASA", "HSRP", "LACP", "OSPF", "Cisco WLC", "VLANs", "NAT"],
+    githubUrl: "https://github.com/2000Thisara/Advanced-Company-Network-Design",
+    linkedinUrl: "https://www.linkedin.com/posts/thisara-senadeera-404b43299_cisco-networking-cybersecurity-activity-7377659545894117376-_-NV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEg_7oQB2Ht_OOmM1qndDQsRNJ8I9Thcb0U"
+  },
   
 ]
 
